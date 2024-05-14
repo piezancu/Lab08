@@ -41,11 +41,10 @@ class View(ft.UserControl):
                               height=500,
                               )
 
-        self._ddNerc = ft.Dropdown(label="Select NERC")
+        self._ddNerc = ft.Dropdown(label="Select NERC", on_change=self._controller.setNERC)
 
-
-        self._txtYears = ft.TextField(label="Insert max years")
-        self._txtHours = ft.TextField(label="Insert max hours")
+        self._txtYears = ft.TextField(label="Insert max years", on_change=self._controller.setMaxY)
+        self._txtHours = ft.TextField(label="Insert max hours", on_change=self._controller.setMaxH)
         self._btnWorstCase = ft.ElevatedButton(text="Worst-Case analysis", on_click=self._controller.handleWorstCase)
 
         row1 = ft.Row([
